@@ -18,8 +18,14 @@ def print_values(list_node)
 end
 
 def reverse_list(list, previous=nil)
-  while 
-
+    # Point to a node here, I'm calling this current_head below
+    current_head = list.next_node
+    list.next_node = previous
+  # Set previous be the next node here
+  if current_head
+    reverse_list(current_head, list)
+  else
+    list
   end 
 end
 
